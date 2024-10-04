@@ -39,11 +39,9 @@ Clona este repositorio en tu máquina local con el siguiente comando:
 
 Si estás utilizando Maven, asegúrate de agregar la siguiente dependencia para Gson en tu archivo pom.xml:
 
-><dependency>
-    <groupId>com.google.code.gson</groupId>
+    <dependency><groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
-    <version>2.8.8</version>
-</dependency>
+    <version>2.8.8</version></dependency>
 
 Si no estás utilizando Maven, descarga la biblioteca Gson desde aquí y agrégala manualmente al classpath de tu proyecto.
 
@@ -61,7 +59,35 @@ Para ejecutar el programa, asegúrate de compilar y ejecutar la clase Principal.
 
 Desde la línea de comandos:
 
-`
-javac Principal.java
-java Principal
-`
+  `
+  javac Principal.java
+  java Principal
+  `
+## 2. Flujo del programa
+
+- El programa mostrará un menú con las monedas más populares y sus nombres completos.
+- El usuario seleccionará la moneda de origen y destino introduciendo el número correspondiente.
+- Luego, se solicitará la cantidad de la moneda de origen que desea convertir.
+- El programa mostrará el resultado de la conversión y permitirá realizar nuevas conversiones o salir del programa.
+  
+## 3. Ejemplo de salida
+
+  `
+  Seleccione una opción para la moneda de origen: 
+    1. USD (Dólar estadounidense)
+    2. EUR (Euro)
+    3. GBP (Libra esterlina)
+    4. JPY (Yen japonés)
+    ...
+    11. Salir
+    Seleccione una opción (1-11): 1
+    Seleccione una opción para la moneda de destino: 
+    1. USD (Dólar estadounidense)
+    2. EUR (Euro)
+    ...
+    11. Salir
+    Seleccione una opción (1-11): 2
+    Introduce la cantidad a convertir: 100
+    100.00 USD equivalen a 87.34 EUR
+    ¿Deseas realizar otra conversión? (si/no): no
+  ` 

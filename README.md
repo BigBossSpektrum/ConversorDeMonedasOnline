@@ -29,8 +29,41 @@ El proyecto utiliza las siguientes dependencias:
   
 # Instalación
 
-Clonar el repositorio
+## 1. Clonar el repositorio
 
 Clona este repositorio en tu máquina local con el siguiente comando:
 
 > git clone https://github.com/tu_usuario/conversor-monedas.git
+
+## 2. Agregar las dependencias
+
+Si estás utilizando Maven, asegúrate de agregar la siguiente dependencia para Gson en tu archivo pom.xml:
+
+`<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.8.8</version>
+</dependency>
+`
+
+Si no estás utilizando Maven, descarga la biblioteca Gson desde aquí y agrégala manualmente al classpath de tu proyecto.
+
+## 3. Configurar tu API Key
+
+El programa utiliza una API Key de ExchangeRate-API. Si necesitas generar tu propia clave, puedes hacerlo aquí. Luego, reemplaza el valor de la clave en el código ConsultaAPI.java con tu propia clave API:
+
+> URI link = URI.create("https://v6.exchangerate-api.com/v6/TU_API_KEY/latest/USD");
+
+# Uso
+
+## 1. Ejecutar el programa
+
+Para ejecutar el programa, asegúrate de compilar y ejecutar la clase Principal.java.
+
+Desde la línea de comandos:
+
+`
+```
+código en bloque
+```
+`

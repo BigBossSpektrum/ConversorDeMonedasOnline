@@ -90,3 +90,7 @@ Desde la línea de comandos:
       100.00 USD equivalen a 87.34 EUR
       ¿Deseas realizar otra conversión? (si/no): no
 
+# Consideraciones
+
+- La precisión del resultado depende de las tasas de cambio proporcionadas por la API en el momento de la consulta.
+- Si el programa lanza excepciones relacionadas con la API, asegúrate de revisar tu conexión a Internet y la validez de la clave API.

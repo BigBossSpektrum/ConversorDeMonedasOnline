@@ -33,4 +33,4 @@ Clonar el repositorio
 
 Clona este repositorio en tu máquina local con el siguiente comando:
 
-`git clone https://github.com/tu_usuario/conversor-monedas.git`
+> git clone https://github.com/tu_usuario/conversor-monedas.git

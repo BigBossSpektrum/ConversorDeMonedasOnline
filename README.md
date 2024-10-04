@@ -72,22 +72,21 @@ Desde la línea de comandos:
   
 ## 3. Ejemplo de salida
 
-  `
-  Seleccione una opción para la moneda de origen: 
-    1. USD (Dólar estadounidense)
-    2. EUR (Euro)
-    3. GBP (Libra esterlina)
-    4. JPY (Yen japonés)
-    ...
-    11. Salir
-    Seleccione una opción (1-11): 1
-    Seleccione una opción para la moneda de destino: 
-    1. USD (Dólar estadounidense)
-    2. EUR (Euro)
-    ...
-    11. Salir
-    Seleccione una opción (1-11): 2
-    Introduce la cantidad a convertir: 100
-    100.00 USD equivalen a 87.34 EUR
-    ¿Deseas realizar otra conversión? (si/no): no
-  ` 
+      Seleccione una opción para la moneda de origen: 
+      1. USD (Dólar estadounidense)
+      2. EUR (Euro)
+      3. GBP (Libra esterlina)
+      4. JPY (Yen japonés)
+      ...
+      11. Salir
+      Seleccione una opción (1-11): 1
+      Seleccione una opción para la moneda de destino: 
+      1. USD (Dólar estadounidense)
+      2. EUR (Euro)
+      ...
+      11. Salir
+      Seleccione una opción (1-11): 2
+      Introduce la cantidad a convertir: 100
+      100.00 USD equivalen a 87.34 EUR
+      ¿Deseas realizar otra conversión? (si/no): no
+

@@ -1,8 +1,8 @@
 # Conversor de Monedas
 ### Este es un proyecto de consola en Java que permite realizar conversiones de monedas utilizando la API de ExchangeRate-API. El programa muestra una lista de las 10 monedas más populares junto con sus abreviaciones y nombres completos, permitiendo al usuario seleccionar la moneda de origen, la moneda de destino, y la cantidad que desea convertir. El resultado de la conversión se muestra de manera clara con las tasas de cambio actualizadas.
 
-## Características
-Permite convertir entre las 10 monedas más populares:
+# Características
+## Permite convertir entre las 10 monedas más populares:
 USD (Dólar estadounidense)
 EUR (Euro)
 GBP (Libra esterlina)

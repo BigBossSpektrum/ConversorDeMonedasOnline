@@ -43,8 +43,7 @@ Si estás utilizando Maven, asegúrate de agregar la siguiente dependencia para 
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
     <version>2.8.8</version>
-</dependency>
-`
+</dependency>`
 
 Si no estás utilizando Maven, descarga la biblioteca Gson desde aquí y agrégala manualmente al classpath de tu proyecto.
 
@@ -63,7 +62,7 @@ Para ejecutar el programa, asegúrate de compilar y ejecutar la clase Principal.
 Desde la línea de comandos:
 
 `
-```
+
 código en bloque
-```
+
 `

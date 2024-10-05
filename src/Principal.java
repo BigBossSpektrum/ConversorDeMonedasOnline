@@ -25,56 +25,73 @@ public class Principal {
         // Crear el scanner para la entrada de datos del usuario
         Scanner scanner = new Scanner(System.in);
 
+        // Crear el historial de conversiones
+        HistorialConversiones historial = new HistorialConversiones();
+
         while (true) {
-            System.out.println("Seleccione una moneda a convertir: ");
-            String monedaOrigen = seleccionarMoneda(scanner);
+            // Mostrar el menú principal
+            System.out.println("Seleccione una opción:");
+            System.out.println("1. Convertir moneda");
+            System.out.println("2. Ver historial de conversiones");
+            System.out.println("3. Salir");
 
-            if (monedaOrigen.equalsIgnoreCase("Salir")) {
-                System.out.println("Saliendo del programa...");
-                System.out.println("Gracias por usar nuestro servicio!");
-                break;
-            }
+            int opcionMenu = scanner.nextInt();
 
-            System.out.println("Seleccione una opción para convertir: " + monedaOrigen);
-            String monedaDestino = seleccionarMoneda(scanner);
+            switch (opcionMenu) {
+                case 1:
+                    // Proceso de conversión de moneda
+                    realizarConversion(scanner, rates, historial);
+                    break;
 
-            if (monedaDestino.equalsIgnoreCase("Salir")) {
-                System.out.println("Saliendo del programa...");
-                break;
-            }
+                case 2:
+                    // Mostrar el historial
+                    historial.mostrarHistorial();
+                    break;
 
-            // Validar si ambas monedas existen en las tasas de cambio
-            if (rates.containsKey(monedaOrigen) && rates.containsKey(monedaDestino)) {
-                System.out.println("Introduce la cantidad a convertir: ");
-                double cantidad = scanner.nextDouble();
+                case 3:
+                    // Salir del programa
+                    System.out.println("Saliendo del programa...");
+                    System.out.println("Gracias por usar nuestro servicio!");
+                    scanner.close();
+                    return;
 
-                // Realizar la conversión
-                double tasaCambioOrigen = rates.get(monedaOrigen);
-                double tasaCambioDestino = rates.get(monedaDestino);
-                double tasaConversion = tasaCambioDestino / tasaCambioOrigen;
-                double resultado = cantidad * tasaConversion;
-
-                // Mostrar el resultado de la conversión
-                System.out.printf("%.2f %s equivalen a %.2f %s%n", cantidad, monedaOrigen, resultado, monedaDestino);
-            } else {
-                System.out.println("Una de las monedas no es válida.");
-            }
-
-            // Preguntar si el usuario desea realizar otra conversión o salir
-            System.out.println("¿Deseas realizar otra conversión? (si/no)");
-            String respuesta = scanner.next();
-            if (respuesta.equalsIgnoreCase("no")) {
-                System.out.println("Saliendo del programa...");
-                System.out.println("Gracias por usar nuestro servicio!");
-                break;
+                default:
+                    System.out.println("Opción no válida. Inténtalo de nuevo.");
             }
         }
-
-        // Cerrar el scanner
-        scanner.close();
     }
 
-    // Método para mostrar el menú y seleccionar la moneda
+    // Método para realizar la conversión de moneda
+    private static void realizarConversion(Scanner scanner, Map<String, Double> rates, HistorialConversiones historial) {
+        System.out.println("Seleccione la moneda de origen:");
+        String monedaOrigen = seleccionarMoneda(scanner);
+
+        System.out.println("Seleccione la moneda de destino:");
+        String monedaDestino = seleccionarMoneda(scanner);
+
+        // Validar si ambas monedas existen en las tasas de cambio
+        if (rates.containsKey(monedaOrigen) && rates.containsKey(monedaDestino)) {
+            System.out.println("Introduce la cantidad a convertir: ");
+            double cantidad = scanner.nextDouble();
+
+            // Realizar la conversión usando las tasas proporcionadas por la API
+            double tasaOrigen = rates.get(monedaOrigen);
+            double tasaDestino = rates.get(monedaDestino);
+            double resultado = (cantidad / tasaOrigen) * tasaDestino;
+
+            // Mostrar el resultado de la conversión
+            System.out.printf("%.2f %s equivalen a %.2f %s%n", cantidad, monedaOrigen, resultado, monedaDestino);
+
+            // Agregar al historial
+            String conversion = String.format("%.2f %s equivalen a %.2f %s", cantidad, monedaOrigen, resultado, monedaDestino);
+            historial.agregarConversion(conversion);
+
+        } else {
+            System.out.println("Una de las monedas seleccionadas no está disponible en las tasas de cambio.");
+        }
+    }
+
+    // Metodo para mostrar el menú y seleccionar la moneda
     private static String seleccionarMoneda(Scanner scanner) {
         while (true) {
             // Mostrar las monedas con sus nombres completos
